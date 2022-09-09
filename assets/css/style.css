@@ -1,0 +1,122 @@
+:root {
+  --body-bg-color: #121214;
+  --text-color: #E1E1E6;
+  --title-color: #04D361;
+  --form-color: #A8A8A8;
+  --bg-button-color: #8257e5;
+  --error-color: rgb(235, 92, 92);
+}
+
+.container {
+  background: var(--body-bg-color);
+  display: flex;
+}
+
+.col-1 {
+  padding: 3.125rem 2rem;
+  width: 50%;
+}
+
+.head__logo {
+  margin-bottom: 9.37rem;
+  width: 20rem;
+}
+
+.col-1__titulo {
+  color: var(--title-color);
+  font-family: 'Work Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+}
+
+.col-1__subtitulo {
+  color: var(--text-color);
+  font-family: 'Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 0.7rem;
+}
+
+.col-1__texto {
+  color: var(--text-color);
+  font-family: 'Spartan';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.18rem;
+  margin-bottom: 3.5rem;
+}
+
+.col1__form {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  margin-top: 1rem;
+}
+
+.form__descricao {
+  color: var(--text-color);
+  font-family: 'Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.form__input {
+  border-left: solid 0.4rem var(--title-color);
+  height: 3rem;
+  width: 46.87rem;
+  padding: 2%;  
+}
+
+.form__bt-enviar {
+  align-items: center;
+  background: var(--bg-button-color);
+  cursor: pointer;
+  display: flex;
+  padding: 2%;
+  width: 3.05rem;
+  height: 3.05rem;
+}
+
+.col-1__link-ler {
+  align-items: center;
+  color: var(--bg-button-color);
+  display: flex;
+  font-family: 'Spartan';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  justify-content: space-between;
+  position: relative;
+  text-decoration: none;
+  top: 6rem;
+  width: 10rem;
+  
+}
+
+.col-2 {
+  background-image: url("../../assets/img/read_news.png");
+  height: 100vh;
+  width: 50%;
+}
+
+#emailError {
+  color: var(--error-color);
+  display: none;
+  font-size: 0.8em;
+  position: absolute;
+  top: 3.5rem;
+}
+
+#emailError.visible {
+  display: block;
+}
+
+.form__input.invalid {
+  border-left: solid var(--error-color);
+}

@@ -1,21 +1,17 @@
-const submit = document.getElementById("submit");
-
-submit.addEventListener("click", validateForm);
+const submit = document.getElementById("sumbmit")
+submit.addEventListener(onclick, "sendEmail")
 
 function validateFieldEmail(email) {
   const re = /\S+@\S+\.\S+/;
   return re.test(email);
 }
 
-function validateForm(e) {
+function sendEmail(e) {
   e.preventDefault();
-  
+    
   const emailField = document.getElementById("email");
-  let valid = true;
-  
   const email = validateFieldEmail(emailField.value);
-  console.log(email)
-  
+
   if(!emailField.value || !email) {
     
     const emailError = document.getElementById("emailError");
@@ -23,13 +19,26 @@ function validateForm(e) {
     emailField.classList.add("invalid");
     emailError.setAttribute("aria-hidden", false);
     emailError.setAttribute("aria-invalid", true); 
+    
   }else{
     emailError.classList.remove("visible");
     emailField.classList.remove("invalid");
     emailField.value ="";
+    
+    const data =  { 
+      "data" : 
+      {"email" : `${email}`}  
+    };
+
+    fetch("http://localhost:1337/api/user-emails",
+    {
+      method:'POST',
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify(data)
+      } )
+    .then(response => response.json())
   }
   
-  return valid;
 }
 
 

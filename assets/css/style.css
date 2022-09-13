@@ -96,7 +96,6 @@
   text-decoration: none;
   top: 6rem;
   width: 10rem;
-  
 }
 
 .col-2 {
@@ -119,4 +118,22 @@
 
 .form__input.invalid {
   border-left: solid var(--error-color);
+}
+
+@media screen and (max-width: 768px) {
+  .col-1 {
+    width: 100%;
+    height: 100vh;
+  } 
+  .col1__form {
+    position: relative;
+    width: 100%;
+  }
+  .col-1__link-ler {
+    top: 0;
+    margin-top: 1rem;
+  }
+  .col-2 {
+    display: none;
+  }
 }
